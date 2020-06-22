@@ -21,9 +21,10 @@ struct Status: Codable{
     var message: String
 }
 
-class Api{
-    func getUsers(completion: @escaping ([User]) -> ()){
-        guard let url = URL(string: "http://localhost/REST_API/index.php?actionName=selectUser") else {return}
+class UserApi{
+    func getUsers(firebaseid: String, completion: @escaping ([User]) -> ()){
+        let firebaseid = firebaseid
+        guard let url = URL(string: "http://localhost/REST_API/authentication.php?actionName=selectUser&firebaseid=\(firebaseid)") else {return}
         
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             let users = try! JSONDecoder().decode([User].self, from: data!)
@@ -38,8 +39,21 @@ class Api{
     func insertUser(email: String, firebaseid: String,completion: @escaping (Status) -> ()){
         let email = email
         let firebaseid = firebaseid
-        guard let url = URL(string: "http://localhost/REST_API/index.php?actionName=insertUser&userEmail=\(email)&userFirebaseid=\(firebaseid)") else {return}
+        guard let url = URL(string: "http://localhost/REST_API/authentication.php?actionName=insertUser&userEmail=\(email)&userFirebaseid=\(firebaseid)") else {return}
         
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            let users = try! JSONDecoder().decode(Status.self, from: data!)
+            print(users)
+            
+            DispatchQueue.main.async {
+                completion(users)
+            }
+        }.resume()
+    }
+    
+    func updateUserToCreator(firebaseid: String, completion: @escaping (Status) -> ()){
+        let firebaseid = firebaseid
+        guard let url = URL(string: "http://localhost/REST_API/authentication.php?actionName=updateUserToCreator&firebaseid=\(firebaseid)") else {return}
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             let users = try! JSONDecoder().decode(Status.self, from: data!)
             print(users)

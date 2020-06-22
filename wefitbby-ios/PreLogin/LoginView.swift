@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct LoginView: View {
     @State var email: String = ""
@@ -38,6 +39,16 @@ struct LoginView: View {
                     Button(action: {
                         //Login to account
                         //if successful
+                        Auth.auth().signIn(withEmail: self.email, password: self.password) { authResult, error in
+                            if error != nil {
+                                print("Error")
+                            } else {
+                                //if create successful
+                                if Auth.auth().currentUser != nil{
+                                    self.navigateLogin = true
+                                }
+                            }
+                        }
                         self.navigateLogin = true
                         //else show error
                     }) {

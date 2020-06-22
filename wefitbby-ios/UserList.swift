@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct UserList: View {
     @State var users: [User] = []
@@ -17,7 +18,8 @@ struct UserList: View {
             Text(user.email)
         }
         .onAppear(){
-                Api().getUsers { (users) in
+            let user = Auth.auth().currentUser
+            UserApi().getUsers(firebaseid: user!.uid) { (users) in
                     self.users = users
                 }
         }

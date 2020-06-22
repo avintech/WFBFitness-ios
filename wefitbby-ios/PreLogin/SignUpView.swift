@@ -45,7 +45,7 @@ struct SignUpView: View {
                                 //if create successful
                                 if Auth.auth().currentUser != nil{
                                     let user  = Auth.auth().currentUser
-                                    Api().insertUser(email: user!.email!, firebaseid: user!.uid) { (status) in
+                                    UserApi().insertUser(email: user!.email!, firebaseid: user!.uid) { (status) in
                                         self.status = status
                                         print(self.status.message)
                                     }
