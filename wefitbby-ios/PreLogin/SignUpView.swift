@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  SignUpView.swift
 //  wefitbby-ios
 //
 //  Created by avintech on 22/6/20.
@@ -7,12 +7,13 @@
 //
 
 import SwiftUI
+import Firebase
 
-struct LoginView: View {
+struct SignUpView: View {
     @State var email: String = ""
     @State var password: String = ""
-    @State private var navigateLogin = false
     @State private var navigateToRegister = false
+    @State private var status: Status = Status(status: true, message: "")
     
     var body: some View {
         GeometryReader{ geo in
@@ -36,31 +37,35 @@ struct LoginView: View {
                     .padding()
                     
                     Button(action: {
-                        //Login to account
-                        //if successful
-                        self.navigateLogin = true
-                        //else show error
-                    }) {
-                        Text("Login")
-                    }
-                    
-                    Button(action: {
-                        self.navigateToRegister = true
+                        //Create Account
+                        Auth.auth().createUser(withEmail: self.email, password: self.password) { authResult, error in
+                            if error != nil {
+                                print("Error")
+                            } else {
+                                //if create successful
+                                if Auth.auth().currentUser != nil{
+                                    let user  = Auth.auth().currentUser
+                                    Api().insertUser(email: user!.email!, firebaseid: user!.uid) { (status) in
+                                        self.status = status
+                                        print(self.status.message)
+                                    }
+                                    self.navigateToRegister = true
+                                }
+                            }
+                        }
                     }) {
                         Text("Register")
                     }
                     
-                    NavigationLink( destination: UserList(), isActive: self.$navigateLogin){EmptyView()}
-                    
-                    NavigationLink( destination: SignUpView(), isActive: self.$navigateToRegister){EmptyView()}
+                    NavigationLink( destination: UserList(), isActive: self.$navigateToRegister){EmptyView()}
                 }
             }
         }
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        SignUpView()
     }
 }

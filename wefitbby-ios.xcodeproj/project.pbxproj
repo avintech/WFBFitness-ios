@@ -22,6 +22,7 @@
 		852E9F35249E6ECB00376025 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E9F34249E6ECB00376025 /* UserList.swift */; };
 		858869D724A06FA5007E216F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 858869D624A06FA5007E216F /* GoogleService-Info.plist */; };
 		858869DA24A079A5007E216F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858869D924A079A5007E216F /* LoginView.swift */; };
+		858869DC24A07E04007E216F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858869DB24A07E04007E216F /* SignUpView.swift */; };
 		A4F8FDC5312AD9B68988FAEA /* Pods_wefitbby_ios_wefitbby_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F66EC83217184CD1098C25 /* Pods_wefitbby_ios_wefitbby_iosUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		852E9F34249E6ECB00376025 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		858869D624A06FA5007E216F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		858869D924A079A5007E216F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		858869DB24A07E04007E216F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A57E6FD03C6C39DDC2DA7B96 /* Pods-wefitbby-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wefitbby-iosTests.release.xcconfig"; path = "Target Support Files/Pods-wefitbby-iosTests/Pods-wefitbby-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		C5958252A8BA8E59EDB144E8 /* Pods-wefitbby-ios-wefitbby-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wefitbby-ios-wefitbby-iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-wefitbby-ios-wefitbby-iosUITests/Pods-wefitbby-ios-wefitbby-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB3C7BA5F237CD0963D793A1 /* Pods-wefitbby-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wefitbby-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-wefitbby-iosTests/Pods-wefitbby-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				85255EB9249C8B6500550416 /* ContentView.swift */,
 				858869D924A079A5007E216F /* LoginView.swift */,
+				858869DB24A07E04007E216F /* SignUpView.swift */,
 			);
 			path = PreLogin;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				858869DA24A079A5007E216F /* LoginView.swift in Sources */,
 				85255EB3249C8B6500550416 /* AppDelegate.swift in Sources */,
 				85255EB8249C8B6500550416 /* wefitbby_ios.xcdatamodeld in Sources */,
+				858869DC24A07E04007E216F /* SignUpView.swift in Sources */,
 				852E9F35249E6ECB00376025 /* UserList.swift in Sources */,
 				85255EBA249C8B6500550416 /* ContentView.swift in Sources */,
 				85255EB5249C8B6500550416 /* SceneDelegate.swift in Sources */,

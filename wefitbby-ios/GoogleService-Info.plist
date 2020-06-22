@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>976861614997-dpqt5lcmkjvlae5tj4tmo9ujpshsmu11.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.976861614997-dpqt5lcmkjvlae5tj4tmo9ujpshsmu11</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>976861614997-f1kc4hsjsu8pjfomc7s9puathr4l3hqs.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCqTy2a4R_pUu9-Lf7sOpRwTz1eAUbKjno</string>
+	<key>GCM_SENDER_ID</key>
+	<string>976861614997</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>avintech.wefitbby-ios</string>
+	<key>PROJECT_ID</key>
+	<string>wefitbby-v1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wefitbby-v1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:976861614997:ios:fa200f8b0f241462ed5c9c</string>
+	<key>DATABASE_URL</key>
+	<string>https://wefitbby-v1.firebaseio.com</string>
+</dict>
+</plist>

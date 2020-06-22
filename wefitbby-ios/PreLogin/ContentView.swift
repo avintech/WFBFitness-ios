@@ -12,7 +12,7 @@ import Combine
 struct ContentView: View  {
     var body: some View {
         NavigationView{
-        NavigationLink(destination: UserList()) {
+        NavigationLink(destination: LoginView()) {
             Text("go!")
             }
             
