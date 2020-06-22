@@ -7,15 +7,26 @@
 //
 
 import SwiftUI
-
-struct ContentView: View {
+import Combine
+//Get Started Page
+struct ContentView: View  {
     var body: some View {
-        Text("Hello, World!")
+        NavigationView{
+        NavigationLink(destination: UserList()) {
+            Text("go!")
+            }
+            
+        }
     }
 }
-
+struct SecondContentView: View{
+    var body: some View{
+        Text("hello world")
+    }
+    
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
+ }
