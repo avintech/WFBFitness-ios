@@ -20,9 +20,18 @@
 		85255ED8249C8B6600550416 /* wefitbby_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85255ED7249C8B6600550416 /* wefitbby_iosUITests.swift */; };
 		852E9F33249E6D3800376025 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E9F32249E6D3800376025 /* Data.swift */; };
 		852E9F35249E6ECB00376025 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E9F34249E6ECB00376025 /* UserList.swift */; };
+		8550189F24A1AA5100D1DE10 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550189E24A1AA5100D1DE10 /* User.swift */; };
+		855018A124A1AA5E00D1DE10 /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855018A024A1AA5E00D1DE10 /* Goals.swift */; };
+		85664B43251F891C0025CEF0 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85664B42251F891C0025CEF0 /* HomeTabView.swift */; };
+		85664B5B25204B460025CEF0 /* Slide6.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 85664B5925204B460025CEF0 /* Slide6.JPG */; };
+		85664B5C25204B460025CEF0 /* Slide5.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 85664B5A25204B460025CEF0 /* Slide5.JPG */; };
 		858869D724A06FA5007E216F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 858869D624A06FA5007E216F /* GoogleService-Info.plist */; };
 		858869DA24A079A5007E216F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858869D924A079A5007E216F /* LoginView.swift */; };
 		858869DC24A07E04007E216F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858869DB24A07E04007E216F /* SignUpView.swift */; };
+		85A613BD2524E1C700E6735E /* Splash Screen in Resources */ = {isa = PBXBuildFile; fileRef = 85A613BC2524E1C700E6735E /* Splash Screen */; };
+		85A613CD2524EF3400E6735E /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A613CC2524EF3400E6735E /* HostingController.swift */; };
+		85A613D52524F1B900E6735E /* LoginView in Resources */ = {isa = PBXBuildFile; fileRef = 85A613D42524F1B900E6735E /* LoginView */; };
+		85CD569F24A479DD00A1B04B /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD569E24A479DD00A1B04B /* GetStartedView.swift */; };
 		A4F8FDC5312AD9B68988FAEA /* Pods_wefitbby_ios_wefitbby_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F66EC83217184CD1098C25 /* Pods_wefitbby_ios_wefitbby_iosUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,9 +76,18 @@
 		85255ED9249C8B6600550416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852E9F32249E6D3800376025 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		852E9F34249E6ECB00376025 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		8550189E24A1AA5100D1DE10 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		855018A024A1AA5E00D1DE10 /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
+		85664B42251F891C0025CEF0 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		85664B5925204B460025CEF0 /* Slide6.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide6.JPG; sourceTree = "<group>"; };
+		85664B5A25204B460025CEF0 /* Slide5.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide5.JPG; sourceTree = "<group>"; };
 		858869D624A06FA5007E216F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		858869D924A079A5007E216F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		858869DB24A07E04007E216F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		85A613BC2524E1C700E6735E /* Splash Screen */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Splash Screen"; sourceTree = "<group>"; };
+		85A613CC2524EF3400E6735E /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		85A613D42524F1B900E6735E /* LoginView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LoginView; sourceTree = "<group>"; };
+		85CD569E24A479DD00A1B04B /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 		A57E6FD03C6C39DDC2DA7B96 /* Pods-wefitbby-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wefitbby-iosTests.release.xcconfig"; path = "Target Support Files/Pods-wefitbby-iosTests/Pods-wefitbby-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		C5958252A8BA8E59EDB144E8 /* Pods-wefitbby-ios-wefitbby-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wefitbby-ios-wefitbby-iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-wefitbby-ios-wefitbby-iosUITests/Pods-wefitbby-ios-wefitbby-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB3C7BA5F237CD0963D793A1 /* Pods-wefitbby-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wefitbby-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-wefitbby-iosTests/Pods-wefitbby-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,18 +169,20 @@
 		85255EB1249C8B6400550416 /* wefitbby-ios */ = {
 			isa = PBXGroup;
 			children = (
+				85664B5825204B210025CEF0 /* Images */,
 				858869D824A0798F007E216F /* PreLogin */,
 				85255EE5249C8CAA00550416 /* DataModels */,
-				85255EB2249C8B6500550416 /* AppDelegate.swift */,
-				85255EB4249C8B6500550416 /* SceneDelegate.swift */,
 				852E9F34249E6ECB00376025 /* UserList.swift */,
+				85664B42251F891C0025CEF0 /* HomeTabView.swift */,
 				85255EBB249C8B6600550416 /* Assets.xcassets */,
-				852E9F32249E6D3800376025 /* Data.swift */,
+				85255EB4249C8B6500550416 /* SceneDelegate.swift */,
+				85255EB2249C8B6500550416 /* AppDelegate.swift */,
 				85255EC0249C8B6600550416 /* LaunchScreen.storyboard */,
 				858869D624A06FA5007E216F /* GoogleService-Info.plist */,
 				85255EC3249C8B6600550416 /* Info.plist */,
 				85255EB6249C8B6500550416 /* wefitbby_ios.xcdatamodeld */,
 				85255EBD249C8B6600550416 /* Preview Content */,
+				85A613CC2524EF3400E6735E /* HostingController.swift */,
 			);
 			path = "wefitbby-ios";
 			sourceTree = "<group>";
@@ -196,8 +216,22 @@
 		85255EE5249C8CAA00550416 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				852E9F32249E6D3800376025 /* Data.swift */,
+				8550189E24A1AA5100D1DE10 /* User.swift */,
+				855018A024A1AA5E00D1DE10 /* Goals.swift */,
 			);
 			path = DataModels;
+			sourceTree = "<group>";
+		};
+		85664B5825204B210025CEF0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				85A613D42524F1B900E6735E /* LoginView */,
+				85A613BC2524E1C700E6735E /* Splash Screen */,
+				85664B5A25204B460025CEF0 /* Slide5.JPG */,
+				85664B5925204B460025CEF0 /* Slide6.JPG */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		858869D824A0798F007E216F /* PreLogin */ = {
@@ -206,6 +240,7 @@
 				85255EB9249C8B6500550416 /* ContentView.swift */,
 				858869D924A079A5007E216F /* LoginView.swift */,
 				858869DB24A07E04007E216F /* SignUpView.swift */,
+				85CD569E24A479DD00A1B04B /* GetStartedView.swift */,
 			);
 			path = PreLogin;
 			sourceTree = "<group>";
@@ -278,7 +313,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = avintech;
 				TargetAttributes = {
 					85255EAE249C8B6400550416 = {
@@ -322,6 +357,10 @@
 				85255EC2249C8B6600550416 /* LaunchScreen.storyboard in Resources */,
 				858869D724A06FA5007E216F /* GoogleService-Info.plist in Resources */,
 				85255EBF249C8B6600550416 /* Preview Assets.xcassets in Resources */,
+				85A613D52524F1B900E6735E /* LoginView in Resources */,
+				85664B5C25204B460025CEF0 /* Slide5.JPG in Resources */,
+				85664B5B25204B460025CEF0 /* Slide6.JPG in Resources */,
+				85A613BD2524E1C700E6735E /* Splash Screen in Resources */,
 				85255EBC249C8B6600550416 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,11 +489,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				855018A124A1AA5E00D1DE10 /* Goals.swift in Sources */,
 				852E9F33249E6D3800376025 /* Data.swift in Sources */,
 				858869DA24A079A5007E216F /* LoginView.swift in Sources */,
+				85664B43251F891C0025CEF0 /* HomeTabView.swift in Sources */,
+				85CD569F24A479DD00A1B04B /* GetStartedView.swift in Sources */,
+				85A613CD2524EF3400E6735E /* HostingController.swift in Sources */,
 				85255EB3249C8B6500550416 /* AppDelegate.swift in Sources */,
 				85255EB8249C8B6500550416 /* wefitbby_ios.xcdatamodeld in Sources */,
 				858869DC24A07E04007E216F /* SignUpView.swift in Sources */,
+				8550189F24A1AA5100D1DE10 /* User.swift in Sources */,
 				852E9F35249E6ECB00376025 /* UserList.swift in Sources */,
 				85255EBA249C8B6500550416 /* ContentView.swift in Sources */,
 				85255EB5249C8B6500550416 /* SceneDelegate.swift in Sources */,
@@ -530,6 +574,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -554,7 +599,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -590,6 +635,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -608,7 +654,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -8,14 +8,6 @@
 
 import SwiftUI
 
-struct User: Codable,Identifiable{
-    let id = UUID()
-    var user_id: String
-    var email: String
-    var firebase_id: String
-    var usertype_id: String
-}
-
 struct Status: Codable{
     var status: Bool
     var message: String
@@ -24,7 +16,7 @@ struct Status: Codable{
 class UserApi{
     func getUsers(firebaseid: String, completion: @escaping ([User]) -> ()){
         let firebaseid = firebaseid
-        guard let url = URL(string: "http://localhost/REST_API/authentication.php?actionName=selectUser&firebaseid=\(firebaseid)") else {return}
+        guard let url = URL(string: "http://localhost/REST_API/authentication.php?actionName=readUser&firebaseid=\(firebaseid)") else {return}
         
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             let users = try! JSONDecoder().decode([User].self, from: data!)
@@ -39,7 +31,7 @@ class UserApi{
     func insertUser(email: String, firebaseid: String,completion: @escaping (Status) -> ()){
         let email = email
         let firebaseid = firebaseid
-        guard let url = URL(string: "http://localhost/REST_API/authentication.php?actionName=insertUser&userEmail=\(email)&userFirebaseid=\(firebaseid)") else {return}
+        guard let url = URL(string: "http://localhost/REST_API/authentication.php?actionName=createUser&userEmail=\(email)&userFirebaseid=\(firebaseid)") else {return}
         
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             let users = try! JSONDecoder().decode(Status.self, from: data!)
@@ -63,4 +55,21 @@ class UserApi{
             }
         }.resume()
     }
+}
+
+class GoalsApi{
+   func getGoals(completion: @escaping ([Goals]) -> ()){
+        guard let url = URL(string: "http://localhost/REST_API/goals.php?actionName=selectGoals") else {return}
+        
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            let goals = try! JSONDecoder().decode([Goals].self, from: data!)
+            print(goals)
+            
+            DispatchQueue.main.async {
+                completion(goals)
+            }
+        }.resume()
+    }
+    
+    
 }

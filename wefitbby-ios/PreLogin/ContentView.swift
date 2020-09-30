@@ -7,26 +7,27 @@
 //
 
 import SwiftUI
+import Firebase
 import Combine
 //Get Started Page
 struct ContentView: View  {
+    var loggedIn = UserDefaults.standard.bool(forKey: "loggedIn")
     var body: some View {
-        NavigationView{
-        NavigationLink(destination: LoginView()) {
-            Text("go!")
+        VStack{
+            if loggedIn{
+                //UserList()
+                HomeTabView()
             }
-            
+            else{
+                GetStartedView()
+            }
         }
     }
 }
-struct SecondContentView: View{
-    var body: some View{
-        Text("hello world")
-    }
-    
-}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+        }
     }
  }

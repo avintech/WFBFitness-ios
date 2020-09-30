@@ -11,21 +11,33 @@ import Firebase
 
 struct UserList: View {
     @State var users: [User] = []
+    var loggedIn = UserDefaults.standard.bool(forKey: "loggedIn")
     
     var body: some View {
-        
-        List(users){ user in
-            Text(user.email)
+        NavigationView{
+            List(users){ user in
+                Text(user.email)
+                Text(user.firebase_id)
+            }
+            .onAppear(){
+                let user = Auth.auth().currentUser
+                UserApi().getUsers(firebaseid: user!.uid) { (users) in
+                        self.users = users
+                    }
+            }.navigationBarItems(trailing:
+                                    Button("log out") {
+                                        do {
+                                                try Auth.auth().signOut()
+                                            UserDefaults.standard.set(false, forKey: "loggedIn")
+                                            } catch {
+                                            }
+                                    }
+                                )
+            
         }
-        .onAppear(){
-            let user = Auth.auth().currentUser
-            UserApi().getUsers(firebaseid: user!.uid) { (users) in
-                    self.users = users
-                }
-        }
-        
     }
 }
+
 
 struct UserList_Previews: PreviewProvider {
     static var previews: some View {

@@ -9,7 +9,7 @@
 import SwiftUI
 import Firebase
 
-struct LoginView: View {
+struct LoginView : View{
     @State var email: String = ""
     @State var password: String = ""
     @State private var navigateLogin = false
@@ -18,9 +18,22 @@ struct LoginView: View {
     var body: some View {
         GeometryReader{ geo in
             ZStack{
-                //Image
-                //Shadow Overlay
+                Color(.black)
+                //Image of rounded rectangle
+                Image("SignInRRectangle")
+                    .resizable()
+                    .scaledToFill()
                 VStack{
+                    //White Logo
+                    //Sign into Account Text
+                    //Email Address inc separator
+                    //Password inc separator
+                    //Forget password
+                    //Sign in Button
+                    //--OR--
+                    //Sign In With Apple Button
+                    //Sign In With Google Button
+                    //Not WFB member yet? Click here to Sign Up
                     VStack(alignment: .leading){
                     Text("Email Address")
                         TextField("Enter your Email Address", text: self.$email)
@@ -41,15 +54,15 @@ struct LoginView: View {
                         //if successful
                         Auth.auth().signIn(withEmail: self.email, password: self.password) { authResult, error in
                             if error != nil {
-                                print("Error")
+                                print(error)
                             } else {
                                 //if create successful
                                 if Auth.auth().currentUser != nil{
+                                    UserDefaults.standard.set(true, forKey: "loggedIn")
                                     self.navigateLogin = true
                                 }
                             }
                         }
-                        self.navigateLogin = true
                         //else show error
                     }) {
                         Text("Login")
@@ -63,10 +76,11 @@ struct LoginView: View {
                     
                     NavigationLink( destination: UserList(), isActive: self.$navigateLogin){EmptyView()}
                     
-                    NavigationLink( destination: SignUpView(), isActive: self.$navigateToRegister){EmptyView()}
+                    NavigationLink( destination: SignUpView(signupRouter: signupRouter()), isActive: self.$navigateToRegister){EmptyView()}
                 }
             }
         }
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
