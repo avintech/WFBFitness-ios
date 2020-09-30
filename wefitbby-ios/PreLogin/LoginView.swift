@@ -25,30 +25,32 @@ struct LoginView : View{
                     .scaledToFill()
                 VStack{
                     //White Logo
+                    Image("WFB-white-logo")
                     //Sign into Account Text
+                    Text("Sign into your account")
                     //Email Address inc separator
+                    VStack{
+                        ZStack(alignment: .leading) {
+                            if email.isEmpty { Text("Email Address").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255)) }
+                                TextField("", text: $email)
+                        }
+                        Image("Separator").padding(.top,10)
+                    }
+                    .foregroundColor(Color.white)
+                    .padding()
                     //Password inc separator
+                    VStack{
+                        ZStack(alignment: .leading) {
+                            if password.isEmpty { Text("Password").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255)) }
+                                SecureField("", text: $password)
+                        }
+                        Image("Separator").padding(.top,10)
+                    }
+                    .foregroundColor(Color.white)
+                    .padding()
                     //Forget password
-                    //Sign in Button
-                    //--OR--
-                    //Sign In With Apple Button
-                    //Sign In With Google Button
-                    //Not WFB member yet? Click here to Sign Up
-                    VStack(alignment: .leading){
-                    Text("Email Address")
-                        TextField("Enter your Email Address", text: self.$email)
-                                      .cornerRadius(20)
-                                      .background(Color.white)
-                    }
-                    .padding()
-                    VStack(alignment: .leading){
-                    Text("Password")
-                        SecureField("Enter your Password", text: self.$password)
-                                      .cornerRadius(20)
-                                      .background(Color.white)
-                    }
-                    .padding()
                     
+                    //Sign in Button
                     Button(action: {
                         //Login to account
                         //if successful
@@ -67,15 +69,18 @@ struct LoginView : View{
                     }) {
                         Text("Login")
                     }
+                    NavigationLink( destination: UserList(), isActive: self.$navigateLogin){EmptyView()}
                     
+                    //--OR--
+                    //Sign In With Apple Button
+                    //Sign In With Google Button
+                    //Not WFB member yet? Click here to Sign Up
                     Button(action: {
                         self.navigateToRegister = true
                     }) {
                         Text("Register")
                     }
-                    
-                    NavigationLink( destination: UserList(), isActive: self.$navigateLogin){EmptyView()}
-                    
+        
                     NavigationLink( destination: SignUpView(signupRouter: signupRouter()), isActive: self.$navigateToRegister){EmptyView()}
                 }
             }
