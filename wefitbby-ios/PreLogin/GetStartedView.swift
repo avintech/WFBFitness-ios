@@ -55,8 +55,15 @@ struct PagingView<Content>: View where Content: View {
                 PageControl(index: $index, maxIndex: maxIndex)
                 NavigationLink(destination: LoginView())
                 {
-                    Text("go!")
-                }.padding()
+                    Text("Get Started")
+                        .foregroundColor(Color.init(red: 64/255, green: 181/255, blue: 230/255))
+                        .padding()
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(Color.init(red: 64/255, green: 181/255, blue: 230/255), lineWidth: 1.5)
+                                .frame(width: 320, height: 54)
+                        )
+                }.padding(.bottom, 40)
             }
         }
     }
@@ -84,10 +91,15 @@ struct PageControl: View {
     var body: some View {
         HStack(spacing: 8) {
             ForEach(0...maxIndex, id: \.self) { index in
-                //Change circle here to the shape that faraz send
-                Circle()
-                    .fill(index == self.index ? Color.white : Color.gray)
-                    .frame(width: 8, height: 8)
+                if index == self.index{
+                    Image("PageControlShape")
+                        .frame(width: 8, height: 8)
+                }
+                else{
+                    Circle()
+                        .fill(Color.init(red: 188/255, green: 202/255, blue: 239/255))
+                        .frame(width: 8, height: 8)
+                }
             }
         }
         .padding(15)
@@ -97,7 +109,7 @@ struct PageControl: View {
 struct GetStartedView: View {
     @State var index = 0
 
-    var images = ["Splash Screen", "Slide6"]
+    var images = ["getstartedview-1", "getstartedview-2", "getstartedview-3"]
 
     var body: some View {
         NavigationView{
