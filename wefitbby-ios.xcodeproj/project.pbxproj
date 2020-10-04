@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		4F1C122D26616AE711D714F1 /* Pods_wefitbby_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670BD4513A8806D2BFF3B99 /* Pods_wefitbby_ios.framework */; };
 		54BB6C31ABCFFC6AE29018AB /* Pods_wefitbby_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758A81F4EE0AE902804D700A /* Pods_wefitbby_iosTests.framework */; };
+		852274342528FA9C005D18C3 /* ORSeparator.png in Resources */ = {isa = PBXBuildFile; fileRef = 852274312528FA9C005D18C3 /* ORSeparator.png */; };
+		852274352528FA9C005D18C3 /* ORSeparator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 852274322528FA9C005D18C3 /* ORSeparator@2x.png */; };
+		852274362528FA9C005D18C3 /* ORSeparator@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 852274332528FA9C005D18C3 /* ORSeparator@3x.png */; };
+		85227440252A2B14005D18C3 /* googlesignin-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8522743A252A2B14005D18C3 /* googlesignin-icon@3x.png */; };
+		85227441252A2B14005D18C3 /* applesignin-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8522743B252A2B14005D18C3 /* applesignin-icon.png */; };
+		85227442252A2B14005D18C3 /* googlesignin-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8522743C252A2B14005D18C3 /* googlesignin-icon.png */; };
+		85227443252A2B14005D18C3 /* googlesignin-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8522743D252A2B14005D18C3 /* googlesignin-icon@2x.png */; };
+		85227444252A2B14005D18C3 /* applesignin-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8522743E252A2B14005D18C3 /* applesignin-icon@3x.png */; };
+		85227445252A2B14005D18C3 /* applesignin-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8522743F252A2B14005D18C3 /* applesignin-icon@2x.png */; };
 		85255EB3249C8B6500550416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85255EB2249C8B6500550416 /* AppDelegate.swift */; };
 		85255EB5249C8B6500550416 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85255EB4249C8B6500550416 /* SceneDelegate.swift */; };
 		85255EB8249C8B6500550416 /* wefitbby_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85255EB6249C8B6500550416 /* wefitbby_ios.xcdatamodeld */; };
@@ -23,14 +32,12 @@
 		8550189F24A1AA5100D1DE10 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550189E24A1AA5100D1DE10 /* User.swift */; };
 		855018A124A1AA5E00D1DE10 /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855018A024A1AA5E00D1DE10 /* Goals.swift */; };
 		85664B43251F891C0025CEF0 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85664B42251F891C0025CEF0 /* HomeTabView.swift */; };
-		85664B5B25204B460025CEF0 /* Slide6.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 85664B5925204B460025CEF0 /* Slide6.JPG */; };
-		85664B5C25204B460025CEF0 /* Slide5.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 85664B5A25204B460025CEF0 /* Slide5.JPG */; };
+		857F3DF225274B3300145C18 /* OneForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F3DF125274B3300145C18 /* OneForgetPasswordView.swift */; };
 		858869D724A06FA5007E216F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 858869D624A06FA5007E216F /* GoogleService-Info.plist */; };
 		858869DA24A079A5007E216F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858869D924A079A5007E216F /* LoginView.swift */; };
 		858869DC24A07E04007E216F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858869DB24A07E04007E216F /* SignUpView.swift */; };
 		85A613BD2524E1C700E6735E /* Splash Screen in Resources */ = {isa = PBXBuildFile; fileRef = 85A613BC2524E1C700E6735E /* Splash Screen */; };
 		85A613CD2524EF3400E6735E /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A613CC2524EF3400E6735E /* HostingController.swift */; };
-		85A613D52524F1B900E6735E /* LoginView in Resources */ = {isa = PBXBuildFile; fileRef = 85A613D42524F1B900E6735E /* LoginView */; };
 		85A613DD2524F87500E6735E /* WFB White Logo in Resources */ = {isa = PBXBuildFile; fileRef = 85A613DC2524F87500E6735E /* WFB White Logo */; };
 		85CD569F24A479DD00A1B04B /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD569E24A479DD00A1B04B /* GetStartedView.swift */; };
 		85D673A82525B01300CABA10 /* GetStartedView in Resources */ = {isa = PBXBuildFile; fileRef = 85D673A72525B01300CABA10 /* GetStartedView */; };
@@ -61,6 +68,15 @@
 		70E450D4F16A4EA4CA847BD6 /* Pods-wefitbby-ios-wefitbby-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wefitbby-ios-wefitbby-iosUITests.release.xcconfig"; path = "Target Support Files/Pods-wefitbby-ios-wefitbby-iosUITests/Pods-wefitbby-ios-wefitbby-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		758A81F4EE0AE902804D700A /* Pods_wefitbby_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wefitbby_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		768EB95AAE722BBDF1C89276 /* Pods-wefitbby-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wefitbby-ios.debug.xcconfig"; path = "Target Support Files/Pods-wefitbby-ios/Pods-wefitbby-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		852274312528FA9C005D18C3 /* ORSeparator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ORSeparator.png; sourceTree = "<group>"; };
+		852274322528FA9C005D18C3 /* ORSeparator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ORSeparator@2x.png"; sourceTree = "<group>"; };
+		852274332528FA9C005D18C3 /* ORSeparator@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ORSeparator@3x.png"; sourceTree = "<group>"; };
+		8522743A252A2B14005D18C3 /* googlesignin-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "googlesignin-icon@3x.png"; sourceTree = "<group>"; };
+		8522743B252A2B14005D18C3 /* applesignin-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "applesignin-icon.png"; sourceTree = "<group>"; };
+		8522743C252A2B14005D18C3 /* googlesignin-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "googlesignin-icon.png"; sourceTree = "<group>"; };
+		8522743D252A2B14005D18C3 /* googlesignin-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "googlesignin-icon@2x.png"; sourceTree = "<group>"; };
+		8522743E252A2B14005D18C3 /* applesignin-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "applesignin-icon@3x.png"; sourceTree = "<group>"; };
+		8522743F252A2B14005D18C3 /* applesignin-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "applesignin-icon@2x.png"; sourceTree = "<group>"; };
 		85255EAF249C8B6400550416 /* wefitbby-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wefitbby-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85255EB2249C8B6500550416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85255EB4249C8B6500550416 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,14 +97,18 @@
 		8550189E24A1AA5100D1DE10 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		855018A024A1AA5E00D1DE10 /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
 		85664B42251F891C0025CEF0 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
-		85664B5925204B460025CEF0 /* Slide6.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide6.JPG; sourceTree = "<group>"; };
-		85664B5A25204B460025CEF0 /* Slide5.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide5.JPG; sourceTree = "<group>"; };
+		857F3DE02527440700145C18 /* Separator@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Separator@3x.png"; sourceTree = "<group>"; };
+		857F3DE12527440700145C18 /* Separator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Separator@2x.png"; sourceTree = "<group>"; };
+		857F3DE22527440700145C18 /* LogInRRectangle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LogInRRectangle@3x.png"; sourceTree = "<group>"; };
+		857F3DE32527440700145C18 /* Separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Separator.png; sourceTree = "<group>"; };
+		857F3DE42527440700145C18 /* LogInRRectangle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LogInRRectangle@2x.png"; sourceTree = "<group>"; };
+		857F3DE52527440700145C18 /* LogInRRectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogInRRectangle.png; sourceTree = "<group>"; };
+		857F3DF125274B3300145C18 /* OneForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneForgetPasswordView.swift; sourceTree = "<group>"; };
 		858869D624A06FA5007E216F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		858869D924A079A5007E216F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		858869DB24A07E04007E216F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		85A613BC2524E1C700E6735E /* Splash Screen */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Splash Screen"; sourceTree = "<group>"; };
 		85A613CC2524EF3400E6735E /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
-		85A613D42524F1B900E6735E /* LoginView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LoginView; sourceTree = "<group>"; };
 		85A613DC2524F87500E6735E /* WFB White Logo */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "WFB White Logo"; sourceTree = "<group>"; };
 		85CD569E24A479DD00A1B04B /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 		85D673A72525B01300CABA10 /* GetStartedView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GetStartedView; sourceTree = "<group>"; };
@@ -231,13 +251,33 @@
 			isa = PBXGroup;
 			children = (
 				85D673A72525B01300CABA10 /* GetStartedView */,
+				857F3DDF2527440700145C18 /* LoginView */,
 				85A613DC2524F87500E6735E /* WFB White Logo */,
-				85A613D42524F1B900E6735E /* LoginView */,
 				85A613BC2524E1C700E6735E /* Splash Screen */,
-				85664B5A25204B460025CEF0 /* Slide5.JPG */,
-				85664B5925204B460025CEF0 /* Slide6.JPG */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		857F3DDF2527440700145C18 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				8522743B252A2B14005D18C3 /* applesignin-icon.png */,
+				8522743F252A2B14005D18C3 /* applesignin-icon@2x.png */,
+				8522743E252A2B14005D18C3 /* applesignin-icon@3x.png */,
+				8522743C252A2B14005D18C3 /* googlesignin-icon.png */,
+				8522743D252A2B14005D18C3 /* googlesignin-icon@2x.png */,
+				8522743A252A2B14005D18C3 /* googlesignin-icon@3x.png */,
+				852274312528FA9C005D18C3 /* ORSeparator.png */,
+				852274322528FA9C005D18C3 /* ORSeparator@2x.png */,
+				852274332528FA9C005D18C3 /* ORSeparator@3x.png */,
+				857F3DE02527440700145C18 /* Separator@3x.png */,
+				857F3DE12527440700145C18 /* Separator@2x.png */,
+				857F3DE22527440700145C18 /* LogInRRectangle@3x.png */,
+				857F3DE32527440700145C18 /* Separator.png */,
+				857F3DE42527440700145C18 /* LogInRRectangle@2x.png */,
+				857F3DE52527440700145C18 /* LogInRRectangle.png */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 		858869D824A0798F007E216F /* PreLogin */ = {
@@ -247,6 +287,7 @@
 				858869D924A079A5007E216F /* LoginView.swift */,
 				858869DB24A07E04007E216F /* SignUpView.swift */,
 				85CD569E24A479DD00A1B04B /* GetStartedView.swift */,
+				857F3DF125274B3300145C18 /* OneForgetPasswordView.swift */,
 			);
 			path = PreLogin;
 			sourceTree = "<group>";
@@ -360,15 +401,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85227443252A2B14005D18C3 /* googlesignin-icon@2x.png in Resources */,
 				85D673A82525B01300CABA10 /* GetStartedView in Resources */,
 				85255EC2249C8B6600550416 /* LaunchScreen.storyboard in Resources */,
+				852274352528FA9C005D18C3 /* ORSeparator@2x.png in Resources */,
+				85227445252A2B14005D18C3 /* applesignin-icon@2x.png in Resources */,
 				858869D724A06FA5007E216F /* GoogleService-Info.plist in Resources */,
 				85255EBF249C8B6600550416 /* Preview Assets.xcassets in Resources */,
-				85A613D52524F1B900E6735E /* LoginView in Resources */,
+				852274342528FA9C005D18C3 /* ORSeparator.png in Resources */,
 				85A613DD2524F87500E6735E /* WFB White Logo in Resources */,
-				85664B5C25204B460025CEF0 /* Slide5.JPG in Resources */,
-				85664B5B25204B460025CEF0 /* Slide6.JPG in Resources */,
+				85227441252A2B14005D18C3 /* applesignin-icon.png in Resources */,
 				85A613BD2524E1C700E6735E /* Splash Screen in Resources */,
+				852274362528FA9C005D18C3 /* ORSeparator@3x.png in Resources */,
+				85227444252A2B14005D18C3 /* applesignin-icon@3x.png in Resources */,
+				85227442252A2B14005D18C3 /* googlesignin-icon.png in Resources */,
+				85227440252A2B14005D18C3 /* googlesignin-icon@3x.png in Resources */,
 				85255EBC249C8B6600550416 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +551,7 @@
 				85CD569F24A479DD00A1B04B /* GetStartedView.swift in Sources */,
 				85A613CD2524EF3400E6735E /* HostingController.swift in Sources */,
 				85255EB3249C8B6500550416 /* AppDelegate.swift in Sources */,
+				857F3DF225274B3300145C18 /* OneForgetPasswordView.swift in Sources */,
 				85255EB8249C8B6500550416 /* wefitbby_ios.xcdatamodeld in Sources */,
 				858869DC24A07E04007E216F /* SignUpView.swift in Sources */,
 				8550189F24A1AA5100D1DE10 /* User.swift in Sources */,

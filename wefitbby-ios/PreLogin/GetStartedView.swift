@@ -16,6 +16,7 @@ struct PagingView<Content>: View where Content: View {
 
     @State private var offset = CGFloat.zero
     @State private var dragging = false
+    @State private var navigateToLogin = false
 
     init(index: Binding<Int>, maxIndex: Int, @ViewBuilder content: @escaping () -> Content) {
         self._index = index
@@ -53,17 +54,22 @@ struct PagingView<Content>: View where Content: View {
             .clipped()
             VStack{
                 PageControl(index: $index, maxIndex: maxIndex)
-                NavigationLink(destination: LoginView())
-                {
-                    Text("Get Started")
-                        .foregroundColor(Color.init(red: 64/255, green: 181/255, blue: 230/255))
-                        .padding()
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.init(red: 64/255, green: 181/255, blue: 230/255), lineWidth: 1.5)
-                                .frame(width: 320, height: 54)
-                        )
-                }.padding(.bottom, 40)
+                
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        navigateToLogin = true
+                    }) {
+                      LoginViewButton(btnText: "Get Started")
+                    }
+                    Spacer()
+                }
+                .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 64/255, green: 181/255, blue: 230/255), lineWidth: 1.5)
+                )
+                .padding()
+                .padding(.bottom, 40)
+                NavigationLink( destination: LoginView(), isActive: self.$navigateToLogin){EmptyView()}
+                
             }
         }
     }

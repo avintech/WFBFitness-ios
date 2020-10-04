@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Slide6.JPG",
+      "filename" : "applesignin-icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "applesignin-icon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "applesignin-icon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
