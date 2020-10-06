@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Firebase
+import GoogleSignIn
 
 struct LoginView : View{
     @State var email: String = ""
@@ -101,6 +102,12 @@ struct LoginView : View{
                                  Spacer()
                                  Button(action: {
                                     //Insert Sign in with Google
+                                    GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+                                    GIDSignIn.sharedInstance()?.signIn()
+                                    if Auth.auth().currentUser != nil{
+                                        UserDefaults.standard.set(true, forKey: "loggedIn")
+                                        self.navigateLogin = true
+                                    }
                                  }) {
                                    LoginViewButton(btnText: "Sign In With Google", imgName: "googlesignin-icon")
                                  }
@@ -154,66 +161,31 @@ struct LoginViewButton: View {
     }
 }
 
-/*VStack{
- VStack(alignment: .leading){
-     //White Logo
-     Image("WFB-white-logo")
-     
-     //Sign into Account Text
-     Text("Sign into your account")
- }
- .offset(x: (0 - geo.size.width)/4)
+struct google : UIViewRepresentable{
+    func makeUIView(context: UIViewRepresentableContext<google>) -> GIDSignInButton {
+        let button = GIDSignInButton()
+        button.colorScheme = .dark
+        GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+        return button
+    }
+    
+    func updateUIView(_ uiView: GIDSignInButton, context: UIViewRepresentableContext<google>) {
+        
+    }
+    
+}
 
- //Email Address inc separator
- ZStack(alignment: .leading) {
-         if email.isEmpty { Text("Email Address").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255)) }
-         TextField("", text: $email)
- }
- Image("Separator")
- 
- //Password inc separator
- ZStack(alignment: .leading) {
-     if password.isEmpty { Text("Password").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255)) }
-         SecureField("", text: $password)
- }
- Image("Separator")
- 
- //Forget password
- NavigationLink( destination: OneForgetPasswordView()){
-     Text("Forgot Password")
- }
- //Sign in Button
- Button(action: {
-     Auth.auth().signIn(withEmail: self.email, password: self.password) { authResult, error in
-         if error != nil {
-             print(error)
-         } else {
-             if Auth.auth().currentUser != nil{
-                 UserDefaults.standard.set(true, forKey: "loggedIn")
-                 self.navigateLogin = true
-             }
-         }
-     }
-     //else show error
- }) {
-     ZStack{
-         RoundedRectangle(cornerRadius: 15)
-             .fill(LinearGradient(gradient: Gradient(colors: [Color("wfb-blue"), Color("wfb-pink")]), startPoint: .leading, endPoint: .trailing))
-             .frame(width: geo.size.width * 0.9, height: 54)
-         Text("Sign In")
-     }
-             
- }
- 
- NavigationLink( destination: UserList(), isActive: self.$navigateLogin){EmptyView()}
- //--OR--
- //Sign In With Apple Button
- //Sign In With Google Button
- //Not WFB member yet? Click here to Sign Up
- Button(action: {
-     self.navigateToRegister = true
- }) {
-     Text("Register")
- }
- NavigationLink( destination: SignUpView(signupRouter: signupRouter()), isActive: self.$navigateToRegister){EmptyView()}
-}*/
+struct SocialLogin: UIViewRepresentable {
+
+    func makeUIView(context: UIViewRepresentableContext<SocialLogin>) -> UIView {
+        return UIView()
+    }
+
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<SocialLogin>) {
+    }
+
+    func attemptLoginGoogle() {
+        GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+        GIDSignIn.sharedInstance()?.signIn()
+    }
+}
