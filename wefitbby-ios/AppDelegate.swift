@@ -13,9 +13,9 @@ import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
-
     
-
+    var status: Status = Status(status: true, message: "")
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
@@ -46,7 +46,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
                 print((err?.localizedDescription)!)
                 return
             }
-            print("user=" + (res?.user.email)!)
+            else{
+                print("user=" + (res?.user.email)!)
+                if Auth.auth().currentUser != nil{
+                    let user  = Auth.auth().currentUser
+                    //Check if user is in db
+                    //If not in db
+                    UserApi().insertUser(email: user!.email!, firebaseid: user!.uid) { (status) in
+                        self.status = status
+                        print(self.status.message)
+                        if status.status == true{
+                            UserDefaults.standard.set(true, forKey: "loggedIn")
+                        }
+                    }
+                }
+            }
         }
     }
 

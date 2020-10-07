@@ -13,8 +13,9 @@ import GoogleSignIn
 struct LoginView : View{
     @State var email: String = ""
     @State var password: String = ""
-    @State private var navigateLogin = false
+    @State var navigateLogin = false
     @State private var navigateToRegister = false
+    var loggedIn = UserDefaults.standard.bool(forKey: "loggedIn")
     
     var body: some View {
         NavigationView{
@@ -104,8 +105,11 @@ struct LoginView : View{
                                     //Insert Sign in with Google
                                     GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
                                     GIDSignIn.sharedInstance()?.signIn()
+                                    /*
+                                    if UserDefaults.standard.bool(forKey: "loggedIn") == true{
+                                        //self.navigateLogin = true
+                                    }*/
                                     if Auth.auth().currentUser != nil{
-                                        UserDefaults.standard.set(true, forKey: "loggedIn")
                                         self.navigateLogin = true
                                     }
                                  }) {
