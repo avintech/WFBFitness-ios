@@ -11,6 +11,7 @@ import Firebase
 import Combine
 //Get Started Page
 struct ContentView: View  {
+    //var loggedIn = Auth.auth().currentUser
     var loggedIn = UserDefaults.standard.bool(forKey: "loggedIn")
     var body: some View {
         VStack{

@@ -68,7 +68,7 @@ struct PagingView<Content>: View where Content: View {
                 )
                 .padding()
                 .padding(.bottom, 40)
-                NavigationLink( destination: LoginView(), isActive: self.$navigateToLogin){EmptyView()}
+                NavigationLink( destination: LoginView(loginRouter: loginRouter()), isActive: self.$navigateToLogin){EmptyView()}
                 
             }
         }

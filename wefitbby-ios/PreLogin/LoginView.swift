@@ -6,11 +6,36 @@
 //  Copyright © 2020 avintech. All rights reserved.
 //
 
+import Foundation
+import Combine
 import SwiftUI
 import Firebase
 import GoogleSignIn
 
-struct LoginView : View{
+class loginRouter: ObservableObject{
+    let objectWillChange = PassthroughSubject<loginRouter,Never>()
+    var loggedIn: Bool = UserDefaults.standard.bool(forKey: "loggedIn")
+    {
+        didSet {
+            objectWillChange.send(self)
+        }
+    }
+}
+
+struct LoginView: View {
+    @ObservedObject var loginRouter: loginRouter
+
+    var body: some View {
+        if loginRouter.loggedIn == false {
+            LoginFakeView(loginRouter: loginRouter)
+        } else if loginRouter.loggedIn == true {
+            UserList().navigationBarBackButtonHidden(true)
+        }
+    }
+}
+
+struct LoginFakeView : View{
+    @ObservedObject var loginRouter: loginRouter
     @State var email: String = ""
     @State var password: String = ""
     @State var navigateLogin = false
@@ -71,7 +96,8 @@ struct LoginView : View{
                                         } else {
                                             if Auth.auth().currentUser != nil{
                                                 UserDefaults.standard.set(true, forKey: "loggedIn")
-                                                self.navigateLogin = true
+                                                loginRouter.loggedIn = true
+                                                print(loginRouter.loggedIn)
                                             }
                                         }
                                     }
@@ -105,13 +131,7 @@ struct LoginView : View{
                                     //Insert Sign in with Google
                                     GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
                                     GIDSignIn.sharedInstance()?.signIn()
-                                    /*
-                                    if UserDefaults.standard.bool(forKey: "loggedIn") == true{
-                                        //self.navigateLogin = true
-                                    }*/
-                                    if Auth.auth().currentUser != nil{
-                                        self.navigateLogin = true
-                                    }
+                                    
                                  }) {
                                    LoginViewButton(btnText: "Sign In With Google", imgName: "googlesignin-icon")
                                  }
@@ -126,7 +146,6 @@ struct LoginView : View{
                             Text("Not WFB member yet?").background(Color.blue)
                             NavigationLink( destination: SignUpView(signupRouter: signupRouter())){Text("Sign Up")}
                         }
-                        NavigationLink( destination: UserList(), isActive: self.$navigateLogin){EmptyView()}
                         
                     }
                     .padding(.trailing, 20)                    //Spacer()
@@ -144,7 +163,7 @@ struct LoginView : View{
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(loginRouter: loginRouter())
     }
 }
 

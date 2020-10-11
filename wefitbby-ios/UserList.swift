@@ -21,9 +21,15 @@ struct UserList: View {
             }
             .onAppear(){
                 let user = Auth.auth().currentUser
-                UserApi().getUsers(firebaseid: user!.uid) { (users) in
-                        self.users = users
-                    }
+                //user!.uid
+                UserApi().getUsers(firebaseid: "1234123123") { (users) in
+                        if users.isEmpty{
+                            print("nothing leh")
+                        }
+                        else{
+                            self.users = users
+                        }
+                }
             }.navigationBarItems(trailing:
                                     Button("log out") {
                                         do {

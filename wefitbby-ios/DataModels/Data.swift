@@ -18,13 +18,17 @@ class UserApi{
         let firebaseid = firebaseid
         guard let url = URL(string: "http://localhost/REST_API/authentication.php?actionName=readUser&firebaseid=\(firebaseid)") else {return}
         
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
-            let users = try! JSONDecoder().decode([User].self, from: data!)
-            print(users)
-            
-            DispatchQueue.main.async {
-                completion(users)
+        URLSession.shared.dataTask(with: url) {data, response, error in
+            if let data = data {
+                if let decodedResponse = try? JSONDecoder().decode([User].self, from: data) {
+                    DispatchQueue.main.async {
+                        completion(decodedResponse)
+                    }
+                    return
+                }
             }
+            print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+
         }.resume()
     }
     
@@ -33,13 +37,26 @@ class UserApi{
         let firebaseid = firebaseid
         guard let url = URL(string: "http://localhost/REST_API/authentication.php?actionName=createUser&userEmail=\(email)&userFirebaseid=\(firebaseid)") else {return}
         
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
+        /*URLSession.shared.dataTask(with: url) { (data, _, error) in
             let users = try! JSONDecoder().decode(Status.self, from: data!)
             print(users)
             
             DispatchQueue.main.async {
                 completion(users)
             }
+        }.resume()*/
+        
+        URLSession.shared.dataTask(with: url) {data, response, error in
+            if let data = data {
+                if let decodedResponse = try? JSONDecoder().decode(Status.self, from: data) {
+                    DispatchQueue.main.async {
+                        completion(decodedResponse)
+                    }
+                    return
+                }
+            }
+            print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+
         }.resume()
     }
     

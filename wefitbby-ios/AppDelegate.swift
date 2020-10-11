@@ -14,8 +14,6 @@ import GoogleSignIn
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
     
-    var status: Status = Status(status: true, message: "")
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
@@ -39,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
       guard let authentication = user.authentication else { return }
       let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                         accessToken: authentication.accessToken)
-      // ...
         Auth.auth().signIn(with: credential) { (res, err) in
             if err != nil{
                 //show error
@@ -51,14 +48,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
                 if Auth.auth().currentUser != nil{
                     let user  = Auth.auth().currentUser
                     //Check if user is in db
+                    UserApi().getUsers(firebaseid: user!.uid) { (users) in
+                        if users[0].firebase_id == ""{
+                            print("User does not exist in database")
+                            UserApi().insertUser(email: user!.email!, firebaseid: user!.uid) { (status) in
+                                if status.status == true{
+                                    //loginRouter.loggedIn = true
+                                    UserDefaults.standard.set(true, forKey: "loggedIn")
+                                }
+                            }
+                        }
+                        else{
+                            print("Found user")
+                        }
+                    }
+
                     //If not in db
-                    UserApi().insertUser(email: user!.email!, firebaseid: user!.uid) { (status) in
+                    /*UserApi().insertUser(email: user!.email!, firebaseid: user!.uid) { (status) in
                         self.status = status
                         print(self.status.message)
                         if status.status == true{
                             UserDefaults.standard.set(true, forKey: "loggedIn")
                         }
-                    }
+                    }*/
+                    
+                    
                 }
             }
         }

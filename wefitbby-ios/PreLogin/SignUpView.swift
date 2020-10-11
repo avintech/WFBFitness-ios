@@ -43,6 +43,7 @@ struct SignUpFakeView: View {
         GeometryReader{ geo in
             ZStack{
                 //Image
+                Color(.black)
                 //Shadow Overlay
                 VStack{
                     VStack(alignment: .leading){
@@ -100,50 +101,53 @@ struct GoalList: View {
     //var goals: [Goals] = []
     var body: some View {
         NavigationView{
-            GeometryReader{ geo in
-                VStack{
-                    HStack{
-                        Button(action: {
-                            
-                        }){
-                            Text("Gain Strength")
+            ZStack{
+                Color(.black)
+                GeometryReader{ geo in
+                    VStack{
+                        HStack{
+                            Button(action: {
+                                
+                            }){
+                                Text("Gain Strength")
+                            }
+                            Button(action: {
+                                
+                            }){
+                                Text("Build Muscle")
+                            }
                         }
-                        Button(action: {
-                            
-                        }){
-                            Text("Build Muscle")
+                        HStack{
+                            Button(action: {
+                                
+                            }){
+                                Text("Athletic Performance")
+                            }
+                            Button(action: {
+                                
+                            }){
+                                Text("Lose Weight")
+                            }
                         }
-                    }
-                    HStack{
-                        Button(action: {
-                            
-                        }){
-                            Text("Athletic Performance")
+                        HStack{
+                            Button(action: {
+                                
+                            }){
+                                Text("Body Toning")
+                            }
+                            Button(action: {
+                                
+                            }){
+                                Text("Diet Plan")
+                            }
                         }
-                        Button(action: {
-                            
-                        }){
-                            Text("Lose Weight")
-                        }
-                    }
-                    HStack{
-                        Button(action: {
-                            
-                        }){
-                            Text("Body Toning")
-                        }
-                        Button(action: {
-                            
-                        }){
-                            Text("Diet Plan")
-                        }
-                    }
-                    HStack{
-                        Text("I will choose later,")
-                        Button(action: {
-                            
-                        }){
-                            Text("skip for now.")
+                        HStack{
+                            Text("I will choose later,")
+                            Button(action: {
+                                
+                            }){
+                                Text("skip for now.")
+                            }
                         }
                     }
                 }
