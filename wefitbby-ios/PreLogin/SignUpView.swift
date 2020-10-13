@@ -35,6 +35,7 @@ struct SignUpView: View {
 struct SignUpFakeView: View {
     @ObservedObject var signupRouter: signupRouter
     @State var email: String = ""
+    @State var name: String = ""
     @State var password: String = ""
     @State private var status: Status = Status(status: true, message: "")
     @State var goals: [Goals] = []
@@ -46,21 +47,31 @@ struct SignUpFakeView: View {
                 Color(.black)
                 //Shadow Overlay
                 VStack{
-                    VStack(alignment: .leading){
-                    Text("Email Address")
-                        TextField("Enter your Email Address", text: self.$email)
-                                      .cornerRadius(20)
-                                      .background(Color.white)
+                    HStack{
+                        VStack(alignment: .leading){
+                            Image("WFB-white-logo")
+                            
+                            Text("Sign into your account").font(Font.custom("Inter-Regular_Bold", size: 20))
+                                .padding()
+                        }
+                        Spacer()
                     }
-                    .padding()
-                    VStack(alignment: .leading){
-                    Text("Password")
-                        SecureField("Enter your Password", text: self.$password)
-                                      .cornerRadius(20)
-                                      .background(Color.white)
+
+                    Group{
+                        VStack{
+                            ZStack(alignment: .leading) {
+                                if name.isEmpty { Text("Name").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255)) }
+                                TextField("", text: $name)
+                            }
+                            ExDivider().padding(.bottom, 15)
+                            
+                            ZStack(alignment: .leading) {
+                                if email.isEmpty { Text("Email Address").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255)) }
+                                TextField("", text: $email)
+                            }
+                            ExDivider()
+                        }.padding()
                     }
-                    .padding()
-                    
                     Button(action: {
                         //Create Account
                         Auth.auth().createUser(withEmail: self.email, password: self.password) { authResult, error in
@@ -86,7 +97,7 @@ struct SignUpFakeView: View {
                     
                     //NavigationLink( destination: GoalList(), isActive: self.$navigateToRegister){EmptyView()}
                 }
-            }
+            }.foregroundColor(.white)
         }
     }
 }
@@ -157,3 +168,12 @@ struct GoalList: View {
 }
 
 
+struct ExDivider: View {
+    let color: Color = .white
+    let width: CGFloat = 1.5
+    var body: some View {
+        Rectangle()
+            .fill(color)
+            .frame(height: width)
+    }
+}

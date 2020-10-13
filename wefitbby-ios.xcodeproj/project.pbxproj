@@ -41,6 +41,7 @@
 		85A613DD2524F87500E6735E /* WFB White Logo in Resources */ = {isa = PBXBuildFile; fileRef = 85A613DC2524F87500E6735E /* WFB White Logo */; };
 		85CD569F24A479DD00A1B04B /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD569E24A479DD00A1B04B /* GetStartedView.swift */; };
 		85D673A82525B01300CABA10 /* GetStartedView in Resources */ = {isa = PBXBuildFile; fileRef = 85D673A72525B01300CABA10 /* GetStartedView */; };
+		85DEC9B12535FA4700A1D215 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85DEC9A22535F84800A1D215 /* Inter-Bold.ttf */; };
 		A4F8FDC5312AD9B68988FAEA /* Pods_wefitbby_ios_wefitbby_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F66EC83217184CD1098C25 /* Pods_wefitbby_ios_wefitbby_iosUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		85A613DC2524F87500E6735E /* WFB White Logo */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "WFB White Logo"; sourceTree = "<group>"; };
 		85CD569E24A479DD00A1B04B /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 		85D673A72525B01300CABA10 /* GetStartedView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GetStartedView; sourceTree = "<group>"; };
+		85DEC9A22535F84800A1D215 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		A57E6FD03C6C39DDC2DA7B96 /* Pods-wefitbby-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wefitbby-iosTests.release.xcconfig"; path = "Target Support Files/Pods-wefitbby-iosTests/Pods-wefitbby-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		C5958252A8BA8E59EDB144E8 /* Pods-wefitbby-ios-wefitbby-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wefitbby-ios-wefitbby-iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-wefitbby-ios-wefitbby-iosUITests/Pods-wefitbby-ios-wefitbby-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB3C7BA5F237CD0963D793A1 /* Pods-wefitbby-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wefitbby-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-wefitbby-iosTests/Pods-wefitbby-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		85255EB1249C8B6400550416 /* wefitbby-ios */ = {
 			isa = PBXGroup;
 			children = (
+				85DEC9A22535F84800A1D215 /* Inter-Bold.ttf */,
 				85664B5825204B210025CEF0 /* Images */,
 				858869D824A0798F007E216F /* PreLogin */,
 				85255EE5249C8CAA00550416 /* DataModels */,
@@ -404,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85227443252A2B14005D18C3 /* googlesignin-icon@2x.png in Resources */,
+				85DEC9B12535FA4700A1D215 /* Inter-Bold.ttf in Resources */,
 				85D673A82525B01300CABA10 /* GetStartedView in Resources */,
 				85255EC2249C8B6600550416 /* LaunchScreen.storyboard in Resources */,
 				852274352528FA9C005D18C3 /* ORSeparator@2x.png in Resources */,
