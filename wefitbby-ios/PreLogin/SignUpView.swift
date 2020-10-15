@@ -116,6 +116,9 @@ struct SignupStep2View : View{
     @ObservedObject var signupRouter: signupRouter
     var name: String
     var email: String
+    @State var password: String = ""
+    @State var passwordCfm: String = ""
+    @State private var hidePassword: Bool = true
     
     var body: some View{
         GeometryReader{ geo in
@@ -128,35 +131,107 @@ struct SignupStep2View : View{
                             VStack{
                                 Text("A").font(Font.custom("Inter-Regular-SemiBold", size: 24))
                                 Text("Capital").font(Font.custom("Inter-Regular", size: 12))
-                            }
+                            }.foregroundColor(.init(red: 55/255, green: 74/255, blue: 83/255))
                         }.frame(width: 50, height: 50).border(Color.white)
                         
                         Group{
                             VStack{
                                 Text("a").font(Font.custom("Inter-Regular-SemiBold", size: 24))
                                 Text("Lower").font(Font.custom("Inter-Regular", size: 12))
-                            }
+                            }.foregroundColor(.init(red: 55/255, green: 74/255, blue: 83/255))
                         }.frame(width: 50, height: 50)
                         
                         Group{
                             VStack{
                                 Text("#").font(Font.custom("Inter-Regular-SemiBold", size: 24))
                                 Text("Number").font(Font.custom("Inter-Regular", size: 12))
-                            }
+                            }.foregroundColor(.init(red: 55/255, green: 74/255, blue: 83/255))
                         }.frame(width: 50, height: 50)
                         
                         Group{
                             VStack{
                                 Text("8+").font(Font.custom("Inter-Regular-SemiBold", size: 24))
                                 Text("Length").font(Font.custom("Inter-Regular", size: 12))
-                            }
+                            }.foregroundColor(.init(red: 55/255, green: 74/255, blue: 83/255))
                         }.frame(width: 50, height: 50)
                     }.padding()
+                    
+                    Group{
+                        VStack(alignment: .leading){
+                            Text("Password").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255))
+                            ZStack(alignment: .leading) {
+                                if password.isEmpty { Text("Password").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255))
+                                }
+                                
+                                if hidePassword {
+                                    HStack{
+                                        SecureField("", text: $password)
+                                        Button(action: {
+                                           self.hidePassword.toggle()
+                                        }) {
+                                            EyeImage(name: "PasswordEye")
+                                        }
+                                    }
+                                } else {
+                                    HStack{
+                                        TextField("", text: $password)
+                                        Button(action: {
+                                           self.hidePassword.toggle()
+                                        }) {
+                                            EyeImage(name: "PasswordEye")
+                                        }
+                                    }
+                                }
+                                
+                            }
+                            ExDivider().padding(.bottom, 15)
+                            
+                            Text("Confirm Password").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255))
+                            ZStack(alignment: .leading) {
+                                if passwordCfm.isEmpty { Text("Confirm Password").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255))
+                                }
+                                
+                                if hidePassword {
+                                    HStack{
+                                        SecureField("", text: $passwordCfm)
+                                        Button(action: {
+                                           self.hidePassword.toggle()
+                                        }) {
+                                            EyeImage(name: "PasswordEye")
+                                        }
+                                    }
+                                } else {
+                                    HStack{
+                                        TextField("", text: $passwordCfm)
+                                        Button(action: {
+                                           self.hidePassword.toggle()
+                                        }) {
+                                            EyeImage(name: "PasswordEye")
+                                        }
+                                    }
+                                }
+                                
+                            }
+                            ExDivider()
+                        }
+                    }.padding()
+                    
+                    HStack{
+                        Spacer()
+                        Button(action: {
+                        }) {
+                            LoginViewButton(imgName: "SignupArrow")
+                        }
+                        Spacer()
+                    }.background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(gradient: Gradient(colors: [Color("wfb-blue"), Color("wfb-pink")]), startPoint: .leading, endPoint: .trailing))).padding()
                 }
             }.foregroundColor(.white)
         }.onAppear(){
             print(signupRouter.email)
         }
+    }
+    func validatePassword(_ string: String){
+        
     }
 }
 
@@ -262,5 +337,22 @@ struct SignupTopView : View{
             }.padding()
             Spacer()
         }
+    }
+}
+
+struct EyeImage: View {
+    
+    private var imageName: String
+    
+    
+    init(name: String) {
+        self.imageName = name
+    }
+    
+    var body: some View {
+        Image(imageName)
+            .resizable()
+            .foregroundColor(.black)
+            .frame(width: 20, height: 20, alignment: .trailing)
     }
 }
