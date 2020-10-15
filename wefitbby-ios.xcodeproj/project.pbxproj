@@ -39,6 +39,10 @@
 		85A613BD2524E1C700E6735E /* Splash Screen in Resources */ = {isa = PBXBuildFile; fileRef = 85A613BC2524E1C700E6735E /* Splash Screen */; };
 		85A613CD2524EF3400E6735E /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A613CC2524EF3400E6735E /* HostingController.swift */; };
 		85A613DD2524F87500E6735E /* WFB White Logo in Resources */ = {isa = PBXBuildFile; fileRef = 85A613DC2524F87500E6735E /* WFB White Logo */; };
+		85BD0A24253820CA002F6534 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BD0A23253820CA002F6534 /* SwiftUIView.swift */; };
+		85C8ED6B25374DC3005D1291 /* SignupArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85C8ED6825374DC2005D1291 /* SignupArrow@3x.png */; };
+		85C8ED6C25374DC3005D1291 /* SignupArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 85C8ED6925374DC2005D1291 /* SignupArrow.png */; };
+		85C8ED6D25374DC3005D1291 /* SignupArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85C8ED6A25374DC2005D1291 /* SignupArrow@2x.png */; };
 		85CD569F24A479DD00A1B04B /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD569E24A479DD00A1B04B /* GetStartedView.swift */; };
 		85D673A82525B01300CABA10 /* GetStartedView in Resources */ = {isa = PBXBuildFile; fileRef = 85D673A72525B01300CABA10 /* GetStartedView */; };
 		85DEC9B12535FA4700A1D215 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85DEC9A22535F84800A1D215 /* Inter-Bold.ttf */; };
@@ -111,6 +115,10 @@
 		85A613BC2524E1C700E6735E /* Splash Screen */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Splash Screen"; sourceTree = "<group>"; };
 		85A613CC2524EF3400E6735E /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		85A613DC2524F87500E6735E /* WFB White Logo */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "WFB White Logo"; sourceTree = "<group>"; };
+		85BD0A23253820CA002F6534 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		85C8ED6825374DC2005D1291 /* SignupArrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SignupArrow@3x.png"; sourceTree = "<group>"; };
+		85C8ED6925374DC2005D1291 /* SignupArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignupArrow.png; sourceTree = "<group>"; };
+		85C8ED6A25374DC2005D1291 /* SignupArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SignupArrow@2x.png"; sourceTree = "<group>"; };
 		85CD569E24A479DD00A1B04B /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 		85D673A72525B01300CABA10 /* GetStartedView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GetStartedView; sourceTree = "<group>"; };
 		85DEC9A22535F84800A1D215 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
@@ -200,6 +208,7 @@
 				858869D824A0798F007E216F /* PreLogin */,
 				85255EE5249C8CAA00550416 /* DataModels */,
 				852E9F34249E6ECB00376025 /* UserList.swift */,
+				85BD0A23253820CA002F6534 /* SwiftUIView.swift */,
 				85664B42251F891C0025CEF0 /* HomeTabView.swift */,
 				85255EBB249C8B6600550416 /* Assets.xcassets */,
 				85255EB4249C8B6500550416 /* SceneDelegate.swift */,
@@ -253,6 +262,7 @@
 		85664B5825204B210025CEF0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				85C8ED5825374D77005D1291 /* SignupView */,
 				85D673A72525B01300CABA10 /* GetStartedView */,
 				857F3DDF2527440700145C18 /* LoginView */,
 				85A613DC2524F87500E6735E /* WFB White Logo */,
@@ -293,6 +303,16 @@
 				857F3DF125274B3300145C18 /* OneForgetPasswordView.swift */,
 			);
 			path = PreLogin;
+			sourceTree = "<group>";
+		};
+		85C8ED5825374D77005D1291 /* SignupView */ = {
+			isa = PBXGroup;
+			children = (
+				85C8ED6925374DC2005D1291 /* SignupArrow.png */,
+				85C8ED6A25374DC2005D1291 /* SignupArrow@2x.png */,
+				85C8ED6825374DC2005D1291 /* SignupArrow@3x.png */,
+			);
+			path = SignupView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,12 +427,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				85227443252A2B14005D18C3 /* googlesignin-icon@2x.png in Resources */,
+				85C8ED6B25374DC3005D1291 /* SignupArrow@3x.png in Resources */,
 				85DEC9B12535FA4700A1D215 /* Inter-Bold.ttf in Resources */,
 				85D673A82525B01300CABA10 /* GetStartedView in Resources */,
 				85255EC2249C8B6600550416 /* LaunchScreen.storyboard in Resources */,
 				852274352528FA9C005D18C3 /* ORSeparator@2x.png in Resources */,
 				85227445252A2B14005D18C3 /* applesignin-icon@2x.png in Resources */,
 				858869D724A06FA5007E216F /* GoogleService-Info.plist in Resources */,
+				85C8ED6D25374DC3005D1291 /* SignupArrow@2x.png in Resources */,
 				85255EBF249C8B6600550416 /* Preview Assets.xcassets in Resources */,
 				852274342528FA9C005D18C3 /* ORSeparator.png in Resources */,
 				85A613DD2524F87500E6735E /* WFB White Logo in Resources */,
@@ -421,6 +443,7 @@
 				852274362528FA9C005D18C3 /* ORSeparator@3x.png in Resources */,
 				85227444252A2B14005D18C3 /* applesignin-icon@3x.png in Resources */,
 				85227442252A2B14005D18C3 /* googlesignin-icon.png in Resources */,
+				85C8ED6C25374DC3005D1291 /* SignupArrow.png in Resources */,
 				85227440252A2B14005D18C3 /* googlesignin-icon@3x.png in Resources */,
 				85255EBC249C8B6600550416 /* Assets.xcassets in Resources */,
 			);
@@ -598,6 +621,7 @@
 				852E9F35249E6ECB00376025 /* UserList.swift in Sources */,
 				85255EBA249C8B6500550416 /* ContentView.swift in Sources */,
 				85255EB5249C8B6500550416 /* SceneDelegate.swift in Sources */,
+				85BD0A24253820CA002F6534 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

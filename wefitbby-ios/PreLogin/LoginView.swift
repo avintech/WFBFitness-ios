@@ -43,7 +43,6 @@ struct LoginFakeView : View{
     var loggedIn = UserDefaults.standard.bool(forKey: "loggedIn")
     
     var body: some View {
-        NavigationView{
             ZStack{
                 Color(.black)
                 
@@ -151,12 +150,9 @@ struct LoginFakeView : View{
                     .padding(.trailing, 20)                    //Spacer()
                 }
                 .padding()
-            }
-            .edgesIgnoringSafeArea(.all)
-            .padding(.bottom, 20)
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
         }
+    .edgesIgnoringSafeArea(.all)
+    .padding(.bottom, 20)
         .foregroundColor(Color.white)
     }
 }
