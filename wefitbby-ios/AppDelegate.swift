@@ -21,10 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         GIDSignIn.sharedInstance().delegate = self
         
         //CHECK FONTS
-        /* for family in UIFont.familyNames.sorted() {
+         for family in UIFont.familyNames.sorted() {
             let names = UIFont.fontNames(forFamilyName: family)
             print("Family: \(family) Font names: \(names)")
-        }*/
+        }
         return true
     }
     

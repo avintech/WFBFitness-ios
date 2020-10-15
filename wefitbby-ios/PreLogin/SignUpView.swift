@@ -123,6 +123,35 @@ struct SignupStep2View : View{
                 Color(.black)
                 VStack{
                     SignupTopView(count: signupRouter.step)
+                    HStack{
+                        Group{
+                            VStack{
+                                Text("A").font(Font.custom("Inter-Regular-SemiBold", size: 24))
+                                Text("Capital").font(Font.custom("Inter-Regular", size: 12))
+                            }
+                        }.frame(width: 50, height: 50).border(Color.white)
+                        
+                        Group{
+                            VStack{
+                                Text("a").font(Font.custom("Inter-Regular-SemiBold", size: 24))
+                                Text("Lower").font(Font.custom("Inter-Regular", size: 12))
+                            }
+                        }.frame(width: 50, height: 50)
+                        
+                        Group{
+                            VStack{
+                                Text("#").font(Font.custom("Inter-Regular-SemiBold", size: 24))
+                                Text("Number").font(Font.custom("Inter-Regular", size: 12))
+                            }
+                        }.frame(width: 50, height: 50)
+                        
+                        Group{
+                            VStack{
+                                Text("8+").font(Font.custom("Inter-Regular-SemiBold", size: 24))
+                                Text("Length").font(Font.custom("Inter-Regular", size: 12))
+                            }
+                        }.frame(width: 50, height: 50)
+                    }.padding()
                 }
             }.foregroundColor(.white)
         }.onAppear(){
@@ -133,7 +162,7 @@ struct SignupStep2View : View{
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(signupRouter: signupRouter())
+        SignupStep2View(signupRouter: signupRouter(),name: "",email: "")
     }
 }
 
