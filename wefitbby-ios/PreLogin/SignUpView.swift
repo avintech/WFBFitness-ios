@@ -21,7 +21,6 @@ class signupRouter: ObservableObject{
     var step: String = "1"
     var email: String = ""
     var name: String = ""
-    var password: String = ""
 }
 
 struct SignUpView: View {
@@ -101,7 +100,8 @@ struct SignupStep1View: View {
                 }.padding()
             }
             .foregroundColor(.white)
-        }.edgesIgnoringSafeArea(.all)
+        }
+        .edgesIgnoringSafeArea([.top,.trailing,.leading])
     }
     func textFieldValidatorEmail(_ string: String) -> Bool {
         if string.count > 100 {
@@ -118,17 +118,6 @@ struct SignupStep2View : View{
     @ObservedObject var signupRouter: signupRouter
     var name: String
     var email: String
-    /*@State var password: String = ""
-    @State var passwordCfm: String = ""
-    @State private var hidePassword: Bool = true
-    
-    @State private var pwCaps: Bool = false
-    @State private var pwLows: Bool = false
-    @State private var pwNums: Bool = false
-    @State private var pwLeng: Bool = false
-    @State private var pwValid: Bool = false
-    @State private var cfmpwValid: Bool = false*/
-    
     
     var body: some View{
         GeometryReader{ geo in
@@ -139,229 +128,12 @@ struct SignupStep2View : View{
                     HStack{
                         Text("Please check your inbox and click on the link to log in.").font(Font.custom("Inter-Regular_SemiBold", size: 15)).padding()
                         Spacer().frame(width: geo.size.width * 0.3)
-                    }.padding()
-                    /*HStack{
-                        Group{
-                            if pwCaps{
-                                VStack{
-                                    Text("A").font(Font.custom("Inter-Regular-SemiBold", size: 24))
-                                    Text("Capital").font(Font.custom("Inter-Regular", size: 12))
-                                }.foregroundColor(.white)
-                            }
-                            else{
-                                VStack{
-                                    Text("A").font(Font.custom("Inter-Regular-SemiBold", size: 24))
-                                    Text("Capital").font(Font.custom("Inter-Regular", size: 12))
-                                }.foregroundColor(.init(red: 55/255, green: 74/255, blue: 83/255))
-                            }
-                        }.frame(width: 50, height: 50).border(Color.white)
-                        
-                        Group{
-                            if pwLows{
-                                VStack{
-                                    Text("a").font(Font.custom("Inter-Regular-SemiBold", size: 24))
-                                    Text("Lower").font(Font.custom("Inter-Regular", size: 12))
-                                }.foregroundColor(.white)
-                            }
-                            else{
-                                VStack{
-                                    Text("a").font(Font.custom("Inter-Regular-SemiBold", size: 24))
-                                    Text("Lower").font(Font.custom("Inter-Regular", size: 12))
-                                }.foregroundColor(.init(red: 55/255, green: 74/255, blue: 83/255))
-                            }
-                        }.frame(width: 50, height: 50)
-                        
-                        Group{
-                            if pwNums{
-                                VStack{
-                                    Text("#").font(Font.custom("Inter-Regular-SemiBold", size: 24))
-                                    Text("Number").font(Font.custom("Inter-Regular", size: 12))
-                                }.foregroundColor(.white)
-                            }
-                            else{
-                                VStack{
-                                    Text("#").font(Font.custom("Inter-Regular-SemiBold", size: 24))
-                                    Text("Number").font(Font.custom("Inter-Regular", size: 12))
-                                }.foregroundColor(.init(red: 55/255, green: 74/255, blue: 83/255))
-                            }
-                        }.frame(width: 50, height: 50)
-                        
-                        Group{
-                            if pwLeng{
-                                VStack{
-                                    Text("8+").font(Font.custom("Inter-Regular-SemiBold", size: 24))
-                                    Text("Length").font(Font.custom("Inter-Regular", size: 12))
-                                }.foregroundColor(.white)
-                            }
-                            else{
-                                VStack{
-                                    Text("8+").font(Font.custom("Inter-Regular-SemiBold", size: 24))
-                                    Text("Length").font(Font.custom("Inter-Regular", size: 12))
-                                }.foregroundColor(.init(red: 55/255, green: 74/255, blue: 83/255))
-                            }
-                        }.frame(width: 50, height: 50)
-                            
-                    }.padding()
-                    
-                    Group{
-                        VStack(alignment: .leading){
-                            Text("Password").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255))
-                            ZStack(alignment: .leading) {
-                                if password.isEmpty { Text("Password").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255))
-                                }
-                                
-                                if hidePassword {
-                                    HStack{
-                                        SecureField("", text: $password)
-                                        Button(action: {
-                                           self.hidePassword.toggle()
-                                        }) {
-                                            EyeImage(name: "PasswordEye")
-                                        }
-                                    }
-                                } else {
-                                    HStack{
-                                        TextField("", text: $password, onEditingChanged: { (isChanged) in
-                                            if !isChanged {
-                                                if self.pwCapsValidator(self.password) {
-                                                    self.pwCaps = true
-                                                } else {
-                                                    self.pwCaps = false
-                                                }
-                                                
-                                                if self.pwLowsValidator(self.password) {
-                                                    self.pwLows = true
-                                                } else {
-                                                    self.pwLows = false
-                                                }
-                                                
-                                                if self.pwNumsValidator(self.password) {
-                                                    self.pwNums = true
-                                                } else {
-                                                    self.pwNums = false
-                                                }
-                                                
-                                                if self.pwLengValidator(self.password) {
-                                                    self.pwLeng = true
-                                                } else {
-                                                    self.pwLeng = false
-                                                }
-                                                
-                                                if self.pwValidator(self.password) {
-                                                    self.pwValid = true
-                                                } else {
-                                                    self.pwValid = false
-                                                }
-                                            }
-                                        })
-                                        Button(action: {
-                                           self.hidePassword.toggle()
-                                        }) {
-                                            EyeImage(name: "PasswordEye")
-                                        }
-                                    }
-                                }
-                                
-                            }
-                            ExDivider().padding(.bottom, 15)
-                            
-                            Text("Confirm Password").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255))
-                            ZStack(alignment: .leading) {
-                                if passwordCfm.isEmpty { Text("Confirm Password").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255))
-                                }
-                                
-                                if hidePassword {
-                                    HStack{
-                                        SecureField("", text: $passwordCfm)
-                                        Button(action: {
-                                           self.hidePassword.toggle()
-                                        }) {
-                                            EyeImage(name: "PasswordEye")
-                                        }
-                                    }
-                                } else {
-                                    HStack{
-                                        TextField("", text: $passwordCfm, onEditingChanged: { (isChanged) in
-                                            if !isChanged {
-                                                if self.pwValid {
-                                                    if self.password == self.passwordCfm{
-                                                        self.cfmpwValid = true
-                                                    }
-                                                    else{
-                                                        self.cfmpwValid = false
-                                                    }
-                                                } else {
-                                                }
-                                            }
-                                        })
-                                        Button(action: {
-                                           self.hidePassword.toggle()
-                                        }) {
-                                            EyeImage(name: "PasswordEye")
-                                        }
-                                    }
-                                }
-                                
-                            }
-                            ExDivider()
-                        }
-                    }.padding()
-                    
-                    HStack{
-                        Spacer()
-                        Button(action: {
-                            
-                        }) {
-                            LoginViewButton(imgName: "SignupArrow")
-                        }.disabled(!cfmpwValid)
-                        Spacer()
-                    }.background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(gradient: Gradient(colors: [Color("wfb-blue"), Color("wfb-pink")]), startPoint: .leading, endPoint: .trailing))).padding()*/
-                }
+                    }.padding()                }
             }.foregroundColor(.white)
         }.onAppear(){
             print(signupRouter.email)
         }
     }
-    /*
-    func pwCapsValidator(_ string: String) -> Bool {
-        if string.count > 100 {
-            return false
-        }
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[A-Z]).{1,}$")
-        return emailPredicate.evaluate(with: string)
-    }
-    
-    func pwLowsValidator(_ string: String) -> Bool {
-        if string.count > 100 {
-            return false
-        }
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z]).{1,}$")
-        return emailPredicate.evaluate(with: string)
-    }
-    
-    func pwNumsValidator(_ string: String) -> Bool {
-        if string.count > 100 {
-            return false
-        }
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[0-9]).{1,}$")
-        return emailPredicate.evaluate(with: string)
-    }
-    
-    func pwLengValidator(_ string: String) -> Bool {
-        if string.count > 100 {
-            return false
-        }
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@ ", "^.{8,}$")
-        return emailPredicate.evaluate(with: string)
-    }
-    
-    func pwValidator(_ string: String) -> Bool {
-        if string.count > 100 {
-            return false
-        }
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$")
-        return emailPredicate.evaluate(with: string)
-    }*/
 }
 
 struct SignUpView_Previews: PreviewProvider {

@@ -39,120 +39,109 @@ struct LoginFakeView : View{
     @State var email: String = ""
     @State var password: String = ""
     @State var navigateLogin = false
-    @State private var navigateToRegister = false
+    @State private var navigateToSignup = false
     var loggedIn = UserDefaults.standard.bool(forKey: "loggedIn")
     
     var body: some View {
+        NavigationView{
             ZStack{
                 Color(.black)
                 
                 Image("SignInRRectangle")
                     .resizable()
                     .scaledToFill()
-                HStack{
-                    VStack{
-                        HStack{
-                            VStack(alignment: .leading){
-                                Image("WFB-white-logo")
-                                
-                                Text("Sign into your account")
-                                    .padding()
-                            }
-                            Spacer()
-                        }
-                        
-                        Group{
-                            ZStack(alignment: .leading) {
-                                if email.isEmpty { Text("Email Address").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255)) }
-                                TextField("", text: $email)
-                            }
-                            .padding(.top,10)
-                            Image("Separator")
-                                .padding(.top,5)
+                
+                VStack{
+                    HStack{
+                        VStack(alignment: .leading){
+                            Image("WFB-white-logo")
                             
-                            ZStack(alignment: .leading) {
-                                if password.isEmpty { Text("Password").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255)) }
-                                SecureField("", text: $password)
-                            }
-                            .padding(.top,10)
-                            Image("Separator")
-                                .padding(.top,5)
+                            Text("Sign into your account")
+                                .padding()
                         }
+                        Spacer()
+                    }
+                    Group{
+                        ZStack(alignment: .leading) {
+                            if email.isEmpty { Text("Email Address").foregroundColor(.init(red: 102/255, green: 102/255, blue: 102/255)) }
+                            TextField("", text: $email)
+                        }
+                        .padding(.top,10)
+                        Image("Separator")
+                        .padding(.top,5)
+                    }
+                    Group{
                         HStack{
                             Spacer()
-                            NavigationLink( destination: OneForgetPasswordView()){
-                                Text("Forgot Password")
-                            }
-                        }.padding()
-                        
-                        Group{
-                            HStack{
-                                Spacer()
-                                Button(action: {
-                                    Auth.auth().signIn(withEmail: self.email, password: self.password) { authResult, error in
-                                        if error != nil {
-                                            print(error)
-                                        } else {
-                                            if Auth.auth().currentUser != nil{
-                                                UserDefaults.standard.set(true, forKey: "loggedIn")
-                                                loginRouter.loggedIn = true
-                                                print(loginRouter.loggedIn)
-                                            }
+                            Button(action: {
+                                Auth.auth().signIn(withEmail: self.email, password: self.password) { authResult, error in
+                                    if error != nil {
+                                        print(error)
+                                    } else {
+                                        if Auth.auth().currentUser != nil{
+                                            UserDefaults.standard.set(true, forKey: "loggedIn")
+                                            loginRouter.loggedIn = true
+                                            print(loginRouter.loggedIn)
                                         }
                                     }
-                                }) {
-                                     LoginViewButton(btnText: "Sign In With Apple")
                                 }
-                                Spacer()
-                            }.background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(gradient: Gradient(colors: [Color("wfb-blue"), Color("wfb-pink")]), startPoint: .leading, endPoint: .trailing)))
-                           
-                            Image("ORDivider")
-                                .padding(.top, 10)
-
-                            
-                            HStack{
-                                 Spacer()
-                                 Button(action: {
-                                    //Insert Sign in with Apple
-                                 }) {
-                                   LoginViewButton(btnText: "Sign In With Apple", imgName: "applesignin-icon")
-                                 }
-                                 Spacer()
+                            }) {
+                                 LoginViewButton(btnText: "Sign In")
                             }
-                            .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 64/255, green: 181/255, blue: 230/255), lineWidth: 1.5))
-                            .padding([.top,.bottom], 10)
-                            .padding(.bottom, 10)
-                            
-                             
-                             HStack{
-                                 Spacer()
-                                 Button(action: {
-                                    //Insert Sign in with Google
-                                    GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
-                                    GIDSignIn.sharedInstance()?.signIn()
-                                    
-                                 }) {
-                                   LoginViewButton(btnText: "Sign In With Google", imgName: "googlesignin-icon")
-                                 }
-                                 Spacer()
-                             }
-                             .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 64/255, green: 181/255, blue: 230/255), lineWidth: 1.5))
-                             .padding(.bottom, 10)
-                             
-                        }
+                            Spacer()
+                        }.background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(gradient: Gradient(colors: [Color("wfb-blue"), Color("wfb-pink")]), startPoint: .leading, endPoint: .trailing)))
+                        .padding(.top,10)
+                       
+                        Image("ORDivider")
+                            .padding(.top, 10)
+
                         
                         HStack{
-                            Text("Not WFB member yet?").background(Color.blue)
-                            NavigationLink( destination: SignUpView(signupRouter: signupRouter())){Text("Sign Up")}
+                             Spacer()
+                             Button(action: {
+                                //Insert Sign in with Apple
+                             }) {
+                               LoginViewButton(btnText: "Sign In With Apple", imgName: "applesignin-icon")
+                             }
+                             Spacer()
                         }
+                        .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 64/255, green: 181/255, blue: 230/255), lineWidth: 1.5))
+                        .padding([.top,.bottom], 10)
+                        .padding(.bottom, 10)
                         
+                         
+                         HStack{
+                             Spacer()
+                             Button(action: {
+                                //Insert Sign in with Google
+                                GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+                                GIDSignIn.sharedInstance()?.signIn()
+                                
+                             }) {
+                               LoginViewButton(btnText: "Sign In With Google", imgName: "googlesignin-icon")
+                             }
+                             Spacer()
+                         }
+                         .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 64/255, green: 181/255, blue: 230/255), lineWidth: 1.5))
+                         .padding(.bottom, 10)
+                         
                     }
-                    .padding(.trailing, 20)                    //Spacer()
-                }
+                    
+                    HStack{
+                        Text("Not WFB member yet?").background(Color.blue)
+                        Button(action: {
+                            self.navigateToSignup = true
+                        }) {
+                            Text("Sign Up")
+                        }
+                        NavigationLink(destination: SignUpView(signupRouter: signupRouter()), isActive: $navigateToSignup, label: { EmptyView() })
+                    }
+                    
+                }.padding()
                 .padding()
+            }
         }
-    .edgesIgnoringSafeArea(.all)
-    .padding(.bottom, 20)
+        .edgesIgnoringSafeArea([.top,.trailing,.leading])
         .foregroundColor(Color.white)
     }
 }

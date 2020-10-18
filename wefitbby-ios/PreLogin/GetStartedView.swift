@@ -125,8 +125,8 @@ struct GetStartedView: View {
                         .resizable()
                         .scaledToFill()
                 }
-            }.navigationBarTitle("")
-            .navigationBarHidden(true)
+            }/*.navigationBarTitle("")
+            .navigationBarHidden(true)*/
             .edgesIgnoringSafeArea(.all)
         }.accentColor(.white)
     }
