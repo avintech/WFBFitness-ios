@@ -63,7 +63,7 @@ struct PagingView<Content>: View where Content: View {
                       LoginViewButton(btnText: "Get Started")
                     }
                     Spacer()
-                }
+                }.frame(height: 56, alignment: .center)
                 .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 64/255, green: 181/255, blue: 230/255), lineWidth: 1.5)
                 )
                 .padding()

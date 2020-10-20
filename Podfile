@@ -11,6 +11,10 @@ target 'wefitbby-ios' do
   pod 'Firebase/Auth'
   pod 'Firebase/DynamicLinks'
   pod 'GoogleSignIn'
+  
+  pod 'Resolver'
+  pod 'Disk', '~> 0.6.4'
+  
   # add pods for any other desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
 	

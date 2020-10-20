@@ -86,10 +86,11 @@ struct LoginFakeView : View{
                                     }
                                 }
                             }) {
-                                 LoginViewButton(btnText: "Sign In")
+                                 LoginViewButton(btnText: "Sign In with Email")
                             }
                             Spacer()
-                        }.background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(gradient: Gradient(colors: [Color("wfb-blue"), Color("wfb-pink")]), startPoint: .leading, endPoint: .trailing)))
+                        }.frame(height: 56, alignment: .center)
+                        .background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(gradient: Gradient(colors: [Color("wfb-blue"), Color("wfb-pink")]), startPoint: .leading, endPoint: .trailing)))
                         .padding(.top,10)
                        
                         Image("ORDivider")
@@ -97,19 +98,25 @@ struct LoginFakeView : View{
 
                         
                         HStack{
-                             Spacer()
-                             Button(action: {
-                                //Insert Sign in with Apple
-                             }) {
-                               LoginViewButton(btnText: "Sign In With Apple", imgName: "applesignin-icon")
-                             }
-                             Spacer()
-                        }
+                            Spacer()
+                            SignInWithAppleToFirebase(
+                                { response in
+                                   if response == .success {
+                                       //self.text = "Success"
+                                    print("successful in loggin in w apple")
+                                    print(Auth.auth().currentUser!.uid)
+                                   } else if response == .error {
+                                       //self.text = "Error"
+                                    print("fail")
+                                   }
+                                }
+                            )
+                            Spacer()
+                        }.frame(height: 56, alignment: .center)
                         .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 64/255, green: 181/255, blue: 230/255), lineWidth: 1.5))
                         .padding([.top,.bottom], 10)
                         .padding(.bottom, 10)
                         
-                         
                          HStack{
                              Spacer()
                              Button(action: {
@@ -121,7 +128,7 @@ struct LoginFakeView : View{
                                LoginViewButton(btnText: "Sign In With Google", imgName: "googlesignin-icon")
                              }
                              Spacer()
-                         }
+                         }.frame(height: 56, alignment: .center)
                          .background(RoundedRectangle(cornerRadius: 10).stroke(Color.init(red: 64/255, green: 181/255, blue: 230/255), lineWidth: 1.5))
                          .padding(.bottom, 10)
                          

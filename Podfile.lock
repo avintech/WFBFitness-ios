@@ -4,6 +4,7 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
+  - Disk (0.6.4)
   - Firebase/Analytics (6.26.0):
     - Firebase/Core
   - Firebase/Auth (6.26.0):
@@ -101,16 +102,20 @@ PODS:
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
   - PromisesObjC (1.2.9)
+  - Resolver (1.1.4)
 
 DEPENDENCIES:
+  - Disk (~> 0.6.4)
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/DynamicLinks
   - GoogleSignIn
+  - Resolver
 
 SPEC REPOS:
   trunk:
     - AppAuth
+    - Disk
     - Firebase
     - FirebaseAnalytics
     - FirebaseAnalyticsInterop
@@ -130,9 +135,11 @@ SPEC REPOS:
     - GTMSessionFetcher
     - nanopb
     - PromisesObjC
+    - Resolver
 
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  Disk: dcee5c2e98fb72f9a924cde8da8435b08244a80e
   Firebase: 7cf5f9c67f03cb3b606d1d6535286e1080e57eb6
   FirebaseAnalytics: 96634d356482d4f3af8fe459a0ebf19a99c71b75
   FirebaseAnalyticsInterop: 3f86269c38ae41f47afeb43ebf32a001f58fcdae
@@ -152,7 +159,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
+  Resolver: 1f4c046255cbadfa97094692e16e940d4329779f
 
-PODFILE CHECKSUM: b90bdafd7424bfdfb8b2dfad07ff305d9f8b12ca
+PODFILE CHECKSUM: e1cd76676e554288a87d21f632961d0fca3343a6
 
 COCOAPODS: 1.9.3
