@@ -40,7 +40,9 @@ struct LoginFakeView : View{
     @State var password: String = ""
     @State var navigateLogin = false
     @State private var navigateToSignup = false
+    @State private var alertItem: AlertItem? = nil
     var loggedIn = UserDefaults.standard.bool(forKey: "loggedIn")
+    @State private var isPresentingSheet = false
     
     var body: some View {
         NavigationView{
@@ -74,16 +76,28 @@ struct LoginFakeView : View{
                         HStack{
                             Spacer()
                             Button(action: {
-                                Auth.auth().signIn(withEmail: self.email, password: self.password) { authResult, error in
-                                    if error != nil {
-                                        print(error)
-                                    } else {
-                                        if Auth.auth().currentUser != nil{
-                                            UserDefaults.standard.set(true, forKey: "loggedIn")
-                                            loginRouter.loggedIn = true
-                                            print(loginRouter.loggedIn)
-                                        }
-                                    }
+                                let actionCodeSettings = ActionCodeSettings()
+                                actionCodeSettings.url = URL(
+                                  string: "https://wefitbbyv1.page.link/sign-in"    // 1
+                                )
+                                actionCodeSettings.handleCodeInApp = true
+                                actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
+
+                                Auth.auth().sendSignInLink(toEmail: self.email,
+                                                           actionCodeSettings: actionCodeSettings)
+                                { error in   // 2
+                                  if let error = error {
+                                    alertItem = AlertItem(
+                                      title: "The sign in link could not be sent.",
+                                      message: error.localizedDescription
+                                    )
+                                  }
+                                  else if error == nil {
+                                    alertItem = AlertItem(
+                                      title: "Email Sent~",
+                                        message: "Check yo email dumbass"
+                                    )
+                                  }
                                 }
                             }) {
                                  LoginViewButton(btnText: "Sign In with Email")
@@ -150,6 +164,12 @@ struct LoginFakeView : View{
         }
         .edgesIgnoringSafeArea([.top,.trailing,.leading])
         .foregroundColor(Color.white)
+        .alert(item: $alertItem) { alert -> Alert in    // *
+          Alert(
+            title: Text(alert.title),
+            message: Text(alert.message)
+          )
+        }
     }
 }
 
@@ -174,6 +194,12 @@ struct LoginViewButton: View {
         }
         .padding()
     }
+}
+
+struct AlertItem: Identifiable {    // *
+  var id = UUID()
+  var title: String
+  var message: String
 }
 
 struct google : UIViewRepresentable{
